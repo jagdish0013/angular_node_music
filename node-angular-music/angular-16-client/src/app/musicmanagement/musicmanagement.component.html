@@ -1,0 +1,75 @@
+<!-- Main Content -->
+<div class="main-content">
+    <section class="section">
+        <div class="section-body">
+            <!-- add content here -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Music Management</h4>
+                            <div class="card-header">
+                                <div class="input-group">
+                                    <div class="input-group-btn" style="padding-left: 95%;">
+                                        <button class="btn btn-primary" (click)="addMusicManagement('new')">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4></h4>
+                            <div class="card-header-form">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" (blur)="searchfun($event);" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary" ><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>Music Name</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                        <th>Music</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr *ngFor="let m of getMusicData">
+                                        <td>{{m.music_name}}</td>
+                                        <td>{{m.description}}</td>
+                                        
+                                        <td>
+                                            <img width="50px" height="50px" src="http://localhost:8080/upload/{{m.image}}">
+                                        </td>
+                                        <td>
+                                            <audio controls>
+                                            <source src="http://localhost:8080/music/{{m.music}}" type="audio/mp3">
+                                          </audio>
+                                        </td>
+                                        <td>
+                                            <a style="cursor:pointer;color: darkorange;" (click)="addMusicManagement(m._id)"><i class="fas fa-edit"></i></a>
+                                            <a style="cursor:pointer;color: red;margin-left: 10%;" (click)="deleteMusic(m._id)"><i class="fas fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>

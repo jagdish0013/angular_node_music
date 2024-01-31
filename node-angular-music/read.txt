@@ -1,0 +1,12 @@
+
+ 
+Run For  Angualr  
+step : 1 : goto "angular-16-client" folder
+Step : 1 : Install packege using npm Install
+Step : 2 : run this command  "ng serve --port 8081" for run application
+
+Run For  Nodejs
+step : 1 : goto "node-js-server" folder
+Step : 1 : Install packege using npm Install
+Step : 2 : run this command  "npm run dev" for run application
+
